@@ -1,0 +1,696 @@
+from django.db import models
+from users.models import User
+
+
+
+
+class GradeClass(models.Model):
+    name = models.CharField(max_length=100)
+    division = models.TextField(blank=True, null=True)
+
+
+    def __str__(self):
+        return f"{self.name}"
+    
+    @classmethod
+    def count(GradeClass):
+        """Returns the total number of GradeClass instances."""
+        return GradeClass.objects.count()
+
+class Division(models.Model):
+    name = models.CharField(max_length=70, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+  
+    def __str__(self):
+        return f"{self.name}"
+    
+
+
+
+    
+
+    
+# Subject Model
+class Subject(models.Model):
+    name = models.CharField(max_length=100)
+    division_assigned = models.ForeignKey(Division, on_delete=models.CASCADE)
+
+    
+
+    def __str__(self):
+        return self.name
+    
+    @staticmethod
+    def total_subject_count():
+        return Subject.objects.count()
+    
+    
+    
+class StudentAdmission(models.Model):
+    user = models.ForeignKey(User, related_name='admissions', on_delete=models.CASCADE, limit_choices_to={'user_type': 'student'})
+    full_name = models.CharField(max_length=100)
+    gender = models.CharField(max_length=20, choices=[('Male', 'Male'), ('Female', 'Female')])
+    county_of_origin = models.CharField(max_length=100)
+    previous_class = models.CharField(max_length=20)
+    # grade_class = models.ForeignKey(GradeClass, on_delete=models.SET_NULL, null=True, related_name="students") 
+    grade_class = models.ForeignKey(GradeClass, on_delete=models.CASCADE)
+    division_assigned =  models.ForeignKey(Division, on_delete=models.CASCADE)
+    major_subject = models.CharField(max_length=50)
+    previous_school = models.CharField(max_length=100)
+    hobit = models.CharField(max_length=100)
+    date_of_birth = models.DateField()
+    address = models.TextField()
+    mother_name = models.CharField(max_length=100)
+    father_name = models.CharField(max_length=100)
+    health_status = models.CharField(max_length=100)
+    parent_contact = models.CharField(max_length=15)
+    enrollment_date = models.DateField()
+    semester_status = models.CharField(max_length=50, choices=[('First', 'First'), ('Second', 'Second')])
+    status = models.CharField(max_length=50, choices=[('Pending', 'Pending'), ('Enrolled', 'Enrolled'), ('Graduated', 'Graduated'), ('Dropped', 'Dropped')])
+    nationality = models.CharField(max_length=100)
+
+
+    def __str__(self):
+        return f"{self.full_name}"
+    @staticmethod
+    def count_by_semester():
+        return {
+            'first_semester': StudentAdmission.objects.filter(semester_status='First').count(),
+            'second_semester': StudentAdmission.objects.filter(semester_status='Second').count(),
+        }
+
+    @staticmethod
+    def count_by_gender():
+        return {
+            'male': StudentAdmission.objects.filter(gender='Male').count(),
+            'female': StudentAdmission.objects.filter(gender='Female').count(),
+        }
+    
+
+    
+
+
+    
+
+
+# Assignment Model
+class Assignment(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    due_date = models.DateField()
+    assignment_subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name="assignments")
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="assignments")
+
+    def __str__(self):
+        return self.title
+    
+
+
+    The View.py:
+
+
+    from rest_framework.viewsets import ModelViewSet
+from rest_framework.decorators import permission_classes
+from django.db.models import Q
+from rest_framework.filters import SearchFilter
+from django.db.models import Max
+from datetime import datetime, timedelta
+from django.http import JsonResponse
+from rest_framework import viewsets, filters
+from rest_framework.authtoken.models import Token
+from django.db import models
+from rest_framework.generics import ListAPIView
+from rest_framework.decorators import action
+from rest_framework.decorators import api_view
+from rest_framework import serializers, views, status
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework import viewsets
+from django.contrib.auth import authenticate
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from django.shortcuts import get_object_or_404
+from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny
+from rest_framework.decorators import api_view
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework import status
+from academics.models import  Division, GradeClass, StudentAdmission,  Subject, Assignment
+from academics.serializers import  DivisionSerializer, GradeClassSerializer, StudentAdmissionSerializer, SubjectSerializer, AssignmentSerializer
+from chat.models import Chat
+from chat.serializers import ChatSerializer
+from expenditure.models import Expenditure
+from expenditure.serializers import ExpenditureSerializer
+from loan.models import Loan
+from loan.serializers import LoanSerializer
+
+from notifications.models import Notification
+from scoolfeedata.models import Payment, SchoolFeesData
+from scoolfeedata.serializers import PaymentSerializer, SchoolFeesDataSerializer
+from teachersalary.models import StaffSalary
+from teachersalary.serializers import StaffSalarySerializer
+from teacherdata.models import TeacherDataProcess
+from teacherdata.serializers import TeacherDataProcessSerializer
+from users.serializers import CustomTokenObtainPairSerializer, LoginSerializer, RegisterSerializer, UserSerializer
+from rest_framework import viewsets, permissions
+from rest_framework import generics
+from users.models import User
+from rest_framework.pagination import PageNumberPagination
+import logging
+logger = logging.getLogger(__name__)
+
+
+class StandardResultsSetPagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+    
+
+class SubjectViewSet(viewsets.ModelViewSet):
+    queryset = Subject.objects.all()
+    serializer_class = SubjectSerializer
+    permission_classes = [IsAuthenticated]
+   
+
+class DivisionViewSet(viewsets.ModelViewSet):
+    queryset = Division.objects.all()
+    serializer_class = DivisionSerializer
+    permission_classes = [IsAuthenticated]
+   
+
+class SubjectRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Subject.objects.all()
+    serializer_class = SubjectSerializer
+
+
+class SubjectCountView(APIView):
+    def get(self, request):
+        count = Subject.total_subject_count()
+        return Response({'total_subject_count': count})
+
+
+
+class AssignmentViewSet(viewsets.ModelViewSet):
+    queryset = Assignment.objects.all()
+    serializer_class = AssignmentSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class ChatViewSet(viewsets.ModelViewSet):
+    queryset = Chat.objects.all()
+    serializer_class = ChatSerializer
+    permission_classes = [IsAuthenticated]  
+
+    def get_serializer_context(self):
+        """Pass the request context to the serializer to get the logged-in user's profile image."""
+        return {'request': self.request}
+
+    def perform_create(self, serializer):
+        """Automatically set the sender to the logged-in user."""
+        chat = serializer.save(sender=self.request.user)
+
+        # Create a message_received notification for the receiver
+        receiver = chat.receiver
+        message_preview = chat.message[:50]  # Preview of the message (first 50 characters)
+        notification_message = f"{chat.sender.username} sent you a message: {message_preview}..."
+        
+        # Create a notification for the receiver
+        Notification.objects.create(
+            user=receiver,
+            message=notification_message,
+            type='message_received',
+            url=f"/chats/{chat.id}/",  # Optional URL to view the full chat
+        )
+
+    @action(detail=True, methods=['get'])
+    def chat_history(self, request, pk=None):
+        """Retrieve chat history between the logged-in user and another user."""
+        try:
+            other_user = User.objects.get(pk=pk)
+        except User.DoesNotExist:
+            return Response({'error': 'User not found'}, status=404)
+
+        chats = Chat.objects.filter(
+            (Q(sender=request.user, receiver=other_user) | Q(sender=other_user, receiver=request.user))
+        ).order_by('timestamp')
+
+        # Use the serializer to return the chat data including sender_id and receiver_id
+        serializer = self.get_serializer(chats, many=True)
+        return Response(serializer.data)
+
+
+class SchoolFeesDataViewSet(ModelViewSet):
+    queryset = SchoolFeesData.objects.all()
+    serializer_class = SchoolFeesDataSerializer
+    permission_classes = [IsAuthenticated]
+    
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        # Filter to only return the authenticated user's data
+        return User.objects.filter(id=self.request.user.id)
+    
+    # def get_queryset(self):
+    #     # Restrict users to view only their own profiles
+    #     return User.objects.filter(id=self.request.user.id)
+
+    # def get_queryset(self):
+    #     # Restrict users to view only their own profiles
+    #     return self.queryset.filter(user=self.request.user)
+
+
+class StudentUserListView(ListAPIView):
+    permission_classes = [AllowAny]
+    queryset = User.objects.filter(user_type='student')
+    serializer_class = UserSerializer
+
+class TeacherUserListView(ListAPIView):
+    permission_classes = [AllowAny]
+    queryset = User.objects.filter(user_type='teacher')
+    serializer_class = UserSerializer
+
+    
+
+
+
+
+
+class GradeClassListView(viewsets.ModelViewSet):
+    queryset = GradeClass.objects.all()
+    serializer_class = GradeClassSerializer
+    permission_classes = [IsAuthenticated]
+
+
+    def get(self, request, *args, **kwargs):
+        print(f"Request PK: {kwargs.get('pk')}")
+        return super().get(request, *args, **kwargs)
+
+class GradeClassRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = GradeClass.objects.all()
+    serializer_class = GradeClassSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class GradeClassCountView(APIView):
+    permission_classes = [IsAuthenticated]
+    def get(self, request):
+        count = GradeClass.count()
+        return Response({"count": count})
+
+
+class GradeClassViewSet(ReadOnlyModelViewSet):  # ✅ USE ViewSet
+    queryset = GradeClass.objects.all()
+    serializer_class = GradeClassSerializer
+    
+class CustomPagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100  
+ 
+
+
+class StudentAdmissionView(viewsets.ModelViewSet):
+    queryset = StudentAdmission.objects.all()
+    serializer_class = StudentAdmissionSerializer
+    permission_classes = [IsAuthenticated]
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_students(request):
+    grade_class_id = request.GET.get('grade_class')
+    print(f"Grade Class ID received: {grade_class_id}")  # Debugging
+
+    if grade_class_id:
+        students = StudentAdmission.objects.filter(
+            grade_class_id=grade_class_id, status='Enrolled'
+        ).values('id', 'full_name')
+
+        print(f"Filtered Students: {list(students)}")  # Debugging
+        return JsonResponse(list(students), safe=False)
+
+    return JsonResponse([], safe=False)
+
+
+@api_view(['GET'])
+def count_by_semester(request):
+    counts = StudentAdmission.count_by_semester()
+    return Response(counts)
+
+@api_view(['GET'])
+def count_by_gender(request):
+    counts = StudentAdmission.count_by_gender()
+    return Response(counts)
+
+
+
+    
+
+   
+class StudentAdmissionCountView(APIView):
+    def get(self, request):
+        # Get the count of student admissions per semester
+        semester_count = StudentAdmission.count_admissions_per_semester()
+        return Response(semester_count, status=status.HTTP_200_OK)
+
+
+class StudentRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.filter(user_type='student')
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny]
+    # permission_classes = [IsAuthenticated]
+    
+
+
+
+
+class ExpenditureViewSet(ModelViewSet):
+    queryset = Expenditure.objects.all()
+    serializer_class = ExpenditureSerializer
+
+# class TeacherDataViewSet(ModelViewSet):
+#     queryset = TeacherDataProcess.objects.all()
+#     serializer_class = TeacherDataProcessSerializer
+
+class TeacherDataViewSet(viewsets.ModelViewSet):
+    queryset = TeacherDataProcess.objects.all()
+    serializer_class = TeacherDataProcessSerializer
+    permission_classes = [IsAuthenticated]
+
+class LoanViewSet(ModelViewSet):
+    queryset = Loan.objects.all()
+    serializer_class = LoanSerializer
+
+
+class RegistrationView(generics.CreateAPIView):
+    serializer_class = RegisterSerializer
+    permission_classes = [AllowAny]  # Public access to registration
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            self.perform_create(serializer)
+            return Response({"message": "User registered successfully!"}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+    
+
+class UserLoginView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        serializer = LoginSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.validated_data['user']
+            refresh = RefreshToken.for_user(user)
+            return Response({
+                "refresh": str(refresh),
+                "access": str(refresh.access_token),
+                "username": user.username,
+                "email": user.email,
+                "user_type": user.user_type,
+                "profile_image": user.profile_image.url if user.profile_image else None,
+            })
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        try:
+            refresh_token = request.data.get("refresh_token")
+            token = RefreshToken(refresh_token)
+            token.blacklist()  # Blacklist the refresh token
+            return Response({"message": "Logged out successfully"}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+        
+        
+class DashboardView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        user = request.user  # Access the authenticated user
+        if user.is_authenticated:
+            return Response({
+                "username": user.username,
+                "email": user.email,
+                "user_type": user.user_type,
+                "profile_image": user.profile_image.url if user.profile_image else None,
+            })
+        return Response({"error": "Unauthorized"}, status=401)
+    
+
+
+
+
+
+class UserProfileView(APIView):
+    """
+    API view to fetch user profile details.
+    Includes total_students and total_teachers for admin users.
+    """
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        user = request.user
+        # user_data = {
+        #     "username": user.username,
+        #     "email": user.email,
+        #     "user_type": user.user_type,
+        #     "profile_image": user.profile_image.url if user.profile_image else None,
+        #     "is_active": user.is_active,
+        # }
+
+        user_data = {
+            "id": user.id,
+            "username": user.username,
+            "email": user.email,
+            "user_type": user.user_type,
+            "profile_image": user.profile_image.url if user.profile_image else None,
+            "is_active": user.is_active,
+        }
+
+        # Admin-specific data
+        if user.user_type == 'admin':
+            total_students = User.objects.filter(user_type='student').count()
+            total_teachers = User.objects.filter(user_type='teacher').count()
+            total_schoolfee = Payment.objects.aggregate(total_schoolfee=models.Sum('amount_paid'))['total_schoolfee'] or 0
+            total_salary = TeacherDataProcess.objects.aggregate(total_salary=models.Sum('salary'))['total_salary'] or 0
+            expenditure = Expenditure.objects.aggregate(expenditure=models.Sum('amount'))['expenditure'] or 0
+            user_data.update({
+                "total_students": total_students,
+                "total_teachers": total_teachers,
+                "total_schoolfee": total_schoolfee,
+                "total_salary": total_salary,
+                "expenditure": expenditure
+            })
+
+        # Determine active status based on last login
+        if user.last_login:
+            last_active_time = datetime.now() - user.last_login.replace(tzinfo=None)
+            user_data["is_active"] = last_active_time < timedelta(minutes=5)
+
+        return Response(user_data)
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def get_users_with_last_message(request):
+    logged_in_user = request.user
+    users = User.objects.exclude(id=logged_in_user.id)
+
+    user_data = []
+    for user in users:
+        # Get the last message exchanged between the logged-in user and this user
+        last_message = Chat.objects.filter(
+            sender__in=[logged_in_user, user], receiver__in=[logged_in_user, user]
+        ).order_by("-timestamp").first()
+
+        user_data.append({
+            "id": user.id,
+            "username": user.username,
+            "profile_image": user.profile_image.url if user.profile_image else None,
+            "is_active": user.is_active,
+            "last_message": last_message.message if last_message else "No messages yet",
+            "last_message_time": last_message.timestamp if last_message else None,
+        })
+
+    return Response(user_data)
+
+
+
+class AllUsersViewSet(viewsets.ModelViewSet):
+    """
+    Viewset to fetch all users excluding the logged-in user.
+    """
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+    filter_backends = [SearchFilter]
+    search_fields = ['username']  # Allow search by username
+    
+    def get_queryset(self):
+        """
+        Override to return the users sorted with active users first, 
+        then inactive users sorted by last login time.
+        """
+        queryset = User.objects.exclude(id=self.request.user.id)
+        
+        # Sort users: Active users first, then inactive users by last login time.
+        queryset = queryset.order_by('-is_active', '-last_login')
+        
+        return queryset
+    
+    
+class AllUsersViewSet(viewsets.ModelViewSet):
+    """
+    Viewset to fetch all users excluding the logged-in user.
+    """
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+    filter_backends = [SearchFilter]
+    search_fields = ['username']  # Allow search by username
+    
+    def get_queryset(self):
+        """
+        Override to return the users sorted with active users first, 
+        then inactive users sorted by last login time.
+        """
+        queryset = User.objects.exclude(id=self.request.user.id)
+        
+        # Sort users: Active users first, then inactive users by last login time.
+        queryset = queryset.order_by('-is_active', '-last_login')
+        
+        return queryset
+    
+
+
+class AllUsersViewSet(viewsets.ModelViewSet):
+    """
+    Viewset to fetch all users excluding the logged-in user.
+    """
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_queryset(self):
+        # Fetch all users excluding the logged-in user
+        return User.objects.exclude(id=self.request.user.id)  
+        
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
+
+
+
+class PaymentViewSet(viewsets.ModelViewSet):
+    queryset = Payment.objects.all()
+    serializer_class = PaymentSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user  # Get the logged-in user
+
+        # Check if the user is an admin
+        if user.user_type == 'admin':
+            return Payment.objects.all()  # Admins can view all payments
+
+        # For students, filter payments linked to them
+        if user.user_type == 'student':
+            student = StudentAdmission.objects.filter(user=user).first()  # Safely get student linked to the user
+            if student:
+                return Payment.objects.filter(student=student)  # Filter payments for the logged-in student
+
+        return Payment.objects.none()  # Return empty queryset if not an admin or student
+
+
+class StaffSalaryView(APIView):
+    permission_classes = [IsAuthenticated]
+    """
+    API for creating and viewing staff salary records with balance calculation.
+    """
+
+    def get(self, request):
+        """
+        Retrieve all staff salary records.
+        """
+        salaries = StaffSalary.objects.all()
+        serializer = StaffSalarySerializer(salaries, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        """
+        Create a new staff salary record with balance calculation.
+        """
+        data = request.data
+        base_salary = data.get("base_salary", 0.00)
+        bonus = data.get("bonus", 0.00)
+        deductions = data.get("deductions", 0.00)
+
+        # Calculate balance_salary
+        try:
+            balance_salary = float(base_salary) + float(bonus) - float(deductions)
+        except ValueError:
+            return Response(
+                {"error": "Invalid numeric values for base_salary, bonus, or deductions."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # Include calculated balance_salary in the data
+        salary_data = {
+            "teacher": data.get("teacher"),
+            "base_salary": base_salary,
+            "bonus": bonus,
+            "deductions": deductions,
+            "balance_salary": balance_salary,
+        }
+
+        serializer = StaffSalarySerializer(data=salary_data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+# class FinancialSummaryView(APIView):
+#     def get(self, request, *args, **kwargs):
+#         school_fees_balance = SchoolFees.get_balance()
+#         student_payment_receipts_balance = StudentPaymentReceipt.get_balance()
+#         total_expenditure = Expenditure.objects.aggregate(total=Sum('amount'))['total'] or 0
+#         total_teacher_salaries = TeacherSalary.objects.aggregate(total=Sum('amount'))['total'] or 0
+#         total_loans = Loan.objects.aggregate(total=Sum('amount'))['total'] or 0
+#         total_student_payments = StudentPayment.objects.aggregate(total=Sum('amount'))['total'] or 0
+
+#         data = {
+#             'school_fees_balance': school_fees_balance,
+#             'student_payment_receipts_balance': student_payment_receipts_balance,
+#             'total_expenditure': total_expenditure,
+#             'total_teacher_salaries': total_teacher_salaries,
+#             'total_loans': total_loans,
+#             'total_student_payments': total_student_payments,
+#         }
+#         return JsonResponse(data)
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+ 
