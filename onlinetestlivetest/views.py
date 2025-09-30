@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from rest_framework import serializers
+from threading import Thread
 import json
 from datetime import timedelta
 from django.conf import settings
@@ -24,12 +25,6 @@ from rest_framework import status
 from django.db.models import Count, Q, F
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import action
-
-
-
-
-
-
 
 
 
@@ -174,7 +169,7 @@ class AssignmentViewSet(viewsets.ModelViewSet):
             return Response({'liked': False})
         return Response({'liked': True})
 
-    # -------- COMMENTS (list + create top‑level) --------
+    # -------- COMMENTS (list + create top-level) --------
     @action(detail=True, methods=['get', 'post'], url_path='comments')
     def comments(self, request, pk=None):
         assignment = self.get_object()
@@ -310,7 +305,7 @@ class TeacherDashboardView(APIView):
         lessonplan_count = TeacherLessonPlan.objects.filter(teacher=user).count()
         assignment_count = Assignment.objects.filter(teacher=user).count()
 
-        # ✅ Totals for deductions and salary advance
+        # ? Totals for deductions and salary advance
         total_deductions = 0
         total_salary_advance = 0
 
@@ -379,106 +374,90 @@ def parse_duration_hms(value: str) -> timedelta:
     return timedelta(hours=int(h), minutes=int(m), seconds=int(s))
 
 
-
-
-
 class PeriodicTestViewSet(viewsets.ModelViewSet):
     """
     Create + list + update + delete tests.
 
-    Teachers: scoped to their own records (existing behavior preserved).
-    Admin/VPI/VPA: full unrestricted access to all tests (view, edit, delete).
+    Teachers: scoped to their own records.
+    Admin/VPI/VPA: unrestricted access to all tests.
     """
     serializer_class = PeriodicTestSerializer
     permission_classes = [IsAuthenticated]
 
-    # ---------------- utilities ----------------
     def _get_teacher_profile(self):
-        """Return TeacherDataProcess profile for current user (teacher only)."""
         try:
             return self.request.user.teacherdataprocess
         except TeacherDataProcess.DoesNotExist:
             raise serializers.ValidationError("Teacher information is missing.")
 
     def get_queryset(self):
-        """
-        Role‑scoped queryset.
-        - admin/vpi/vpa: ALL tests.
-        - teacher: only own tests (original behavior).
-        - everyone else: none (adjust later if needed).
-        """
         user = self.request.user
         if getattr(user, "user_type", None) in ["admin", "vpi", "vpa"]:
-            return PeriodicTest.objects.all().order_by('-created_at')
-
+            return PeriodicTest.objects.all().order_by("-created_at")
         if getattr(user, "user_type", None) == "teacher":
-            return PeriodicTest.objects.filter(teacher=user).order_by('-created_at')
-
+            return PeriodicTest.objects.filter(teacher=user).order_by("-created_at")
         return PeriodicTest.objects.none()
 
-    # ---------------- create override ----------------
     def create(self, request, *args, **kwargs):
-        """
-        NOTE: Leaving creation flow as teacher‑only (your current logic).
-        If you later want admin/vpi/vpa to create tests, let me know and I'll extend this.
-        """
         if request.user.user_type != "teacher":
             return Response(
                 {"detail": "Only teachers can create tests."},
                 status=status.HTTP_403_FORBIDDEN,
             )
 
-        teacher_profile = self._get_teacher_profile()  # TeacherDataProcess
-        user = request.user  # User FK target
-
+        teacher_profile = self._get_teacher_profile()
+        user = request.user
         data = request.data
 
-        # Parse required primitives
+        # --- parse primitives
         direction = (data.get("direction") or "").strip()
         grade_class_id = data.get("grade_class")
         subject_id = data.get("subject")
         period_id = data.get("period")
-        start_time_raw = data.get("start_time")
-        end_time_raw = data.get("end_time")
-        duration_raw = data.get("duration")
-
-        # Parse datetimes (expect ISO strings)
-        start_time = parse_datetime(start_time_raw) if start_time_raw else None
-        end_time = parse_datetime(end_time_raw) if end_time_raw else None
+        start_time = parse_datetime(data.get("start_time") or "")
+        end_time = parse_datetime(data.get("end_time") or "")
         if not start_time or not end_time:
-            return Response({"detail": "Invalid start_time or end_time."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"detail": "Invalid start_time or end_time."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
 
-        # Parse duration (frontend auto-calcs; model recalcs too)
+        # duration
         try:
-            duration_td = parse_duration_hms(duration_raw) if duration_raw else None
+            duration_td = (
+                parse_duration_hms(data.get("duration")) if data.get("duration") else None
+            )
         except Exception as exc:
             return Response({"duration": [str(exc)]}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Parse sections JSON string
-        try:
-            raw_sections = data.get("sections", "[]")
-            sections_data = json.loads(raw_sections)
-        except json.JSONDecodeError:
-            return Response({"sections": ["Invalid JSON."]}, status=status.HTTP_400_BAD_REQUEST)
+        # sections
+        raw_sections = data.get("sections", [])
+        if isinstance(raw_sections, str):
+            try:
+                sections_data = json.loads(raw_sections)
+            except json.JSONDecodeError:
+                return Response({"sections": ["Invalid JSON."]}, status=status.HTTP_400_BAD_REQUEST)
+        elif isinstance(raw_sections, list):
+            sections_data = raw_sections
+        else:
+            sections_data = []
 
-        # Attach uploaded files to matching question dicts
+        # attach uploaded files to questions
         files = request.FILES
         for s_idx, section in enumerate(sections_data):
             for q_idx, q in enumerate(section.get("questions", [])):
-                img_key = f"question_image_{s_idx}_{q_idx}"
-                att_key = f"attachment_{s_idx}_{q_idx}"
-                if img_key in files:
-                    q["question_image"] = files[img_key]
-                if att_key in files:
-                    q["attachment"] = files[att_key]
+                if f"question_image_{s_idx}_{q_idx}" in files:
+                    q["question_image"] = files[f"question_image_{s_idx}_{q_idx}"]
+                if f"attachment_{s_idx}_{q_idx}" in files:
+                    q["attachment"] = files[f"attachment_{s_idx}_{q_idx}"]
 
-        # Permission: teacher must be assigned to subject + grade_class (via profile)
+        # validate assignment
         if subject_id and not teacher_profile.subjects.filter(pk=subject_id).exists():
             return Response({"subject": ["You are not assigned to this subject."]}, status=status.HTTP_400_BAD_REQUEST)
         if grade_class_id and not teacher_profile.grade_class.filter(pk=grade_class_id).exists():
             return Response({"grade_class": ["You are not assigned to this grade class."]}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Build serializer payload
+        # payload
         serializer_payload = {
             "direction": direction,
             "grade_class": grade_class_id,
@@ -493,36 +472,51 @@ class PeriodicTestViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(data=serializer_payload, context={"request": request})
         serializer.is_valid(raise_exception=True)
 
-        # Save with actual User (FK)
         test = serializer.save(teacher=user)
 
-        self._send_notifications(test)
+        # Send notifications asynchronously to avoid blocking request
+        try:
+            from threading import Thread
+            Thread(target=self._send_notifications, args=(test,), daemon=True).start()
+        except Exception as e:
+            print(f"[WARN] Notification thread failed: {e}")
 
-        headers = self.get_success_headers(serializer.data)
-        return Response(self.get_serializer(test).data, status=status.HTTP_201_CREATED, headers=headers)
+        response_serializer = self.get_serializer(test)
+        return Response(
+            {"message": "Test created successfully!", "test": response_serializer.data},
+            status=status.HTTP_201_CREATED,
+        )
 
     # ---------------- update override ----------------
     def update(self, request, *args, **kwargs):
         user = request.user
         instance = self.get_object()
 
-        # ---- Privileged roles: admin/vpi/vpa can edit ANY test ----
         if getattr(user, "user_type", None) in ["admin", "vpi", "vpa"]:
-            # Bypass teacher assignment checks; defer to serializer.
-            return super().update(request, *args, **kwargs)
+            serializer = self.get_serializer(
+                instance, data=request.data, partial=kwargs.pop("partial", False)
+            )
+            serializer.is_valid(raise_exception=True)
+            test = serializer.save()
+            Thread(target=self._send_notifications, args=(test,), daemon=True).start()
+            return Response({"message": "Test updated successfully!", "test": serializer.data}, status=status.HTTP_200_OK)
 
-        # ---- Teacher path (original behavior) ----
         teacher_profile = self._get_teacher_profile()
-
-        # Enforce ownership (instance.teacher -> User)
         if instance.teacher != user:
             return Response({"detail": "You do not have permission to edit this test."}, status=status.HTTP_403_FORBIDDEN)
 
-        partial = kwargs.pop('partial', False)
-        serializer = self.get_serializer(instance, data=request.data, partial=partial, context={"request": request})
+        data = request.data.copy()
+        raw_sections = data.get("sections", [])
+        if isinstance(raw_sections, str):
+            try:
+                data["sections"] = json.loads(raw_sections)
+            except json.JSONDecodeError:
+                return Response({"sections": ["Invalid JSON."]}, status=status.HTTP_400_BAD_REQUEST)
+
+        partial = kwargs.pop("partial", False)
+        serializer = self.get_serializer(instance, data=data, partial=partial, context={"request": request})
         serializer.is_valid(raise_exception=True)
 
-        # Validate assignments (if changed)
         new_subject = serializer.validated_data.get("subject", instance.subject)
         new_grade_class = serializer.validated_data.get("grade_class", instance.grade_class)
         if new_subject not in teacher_profile.subjects.all():
@@ -530,98 +524,40 @@ class PeriodicTestViewSet(viewsets.ModelViewSet):
         if new_grade_class not in teacher_profile.grade_class.all():
             return Response({"grade_class": ["You are not assigned to this grade class."]}, status=status.HTTP_400_BAD_REQUEST)
 
-        self.perform_update(serializer)
-        return Response(serializer.data)
+        test = serializer.save()
+        Thread(target=self._send_notifications, args=(test,), daemon=True).start()
+
+        return Response({"message": "Test updated successfully!", "test": serializer.data}, status=status.HTTP_200_OK)
 
     # ---------------- destroy override ----------------
     def destroy(self, request, *args, **kwargs):
-        user = request.user
         instance = self.get_object()
-
-        # ---- Privileged roles: admin/vpi/vpa can delete ANY test ----
-        if getattr(user, "user_type", None) in ["admin", "vpi", "vpa"]:
-            return super().destroy(request, *args, **kwargs)
-
-        # ---- Teacher path (original behavior) ----
-        if instance.teacher != user:
-            return Response({"detail": "You do not have permission to delete this test."}, status=status.HTTP_403_FORBIDDEN)
-        self.perform_destroy(instance)
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        if getattr(request.user, "user_type", None) in ["admin", "vpi", "vpa"] or instance.teacher == request.user:
+            self.perform_destroy(instance)
+            return Response({"message": "Test deleted successfully!"}, status=204)
+        return Response({"detail": "You do not have permission to delete this test."}, status=status.HTTP_403_FORBIDDEN)
 
     # ---------------- notifications ----------------
     def _send_notifications(self, test: PeriodicTest):
-        """
-        Email + in-app notification to all students (and their parents)
-        in the test's grade_class.
-
-        Minimal styling upgrade (deep blue header, light gray body).
-        Keeps your original plain-text message/logic intact.
-        """
         students = StudentAdmission.objects.filter(grade_class=test.grade_class)
-
         student_users = [s.user for s in students if s.user]
         parent_users = [s.parent for s in students if s.parent]
-        extra_staff = User.objects.filter(user_type__in=["admin", "vpi", "vpa"])  # <-- Moved here
+        extra_staff = User.objects.filter(user_type__in=["admin", "vpi", "vpa"])
         recipients = set(student_users + parent_users + list(extra_staff))
-        
 
         subject_line = f"New Test Posted: {test.subject.name}"
-        msg = (
-            f"A new test for {test.subject.name} in {test.grade_class.name} "
-            f"has been posted by {test.teacher.username}. "
-            f"Available {test.start_time} – {test.end_time}."
-        )
-
+        msg = f"A new test for {test.subject.name} in {test.grade_class.name} has been posted by {test.teacher.username}. Available {test.start_time} - {test.end_time}."
         from_email = getattr(settings, "DEFAULT_FROM_EMAIL", "no-reply@example.com")
 
-        # HTML email with deep blue header & light gray body
         html_template = f"""
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>{subject_line}</title>
-        </head>
-        <body style="margin:0;padding:0;background:#f3f4f6;font-family:Arial,Helvetica,sans-serif;">
-          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f3f4f6;padding:20px 0;">
-            <tr>
-              <td align="center">
-                <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background:#ffffff;border-radius:6px;overflow:hidden;">
-                  <tr>
-                    <td style="background:#1e3a8a;color:#ffffff;text-align:center;padding:20px;font-size:20px;font-weight:bold;">
-                      {subject_line}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="padding:20px;font-size:16px;color:#111827;line-height:1.5;">
-                      <p>{msg}</p>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </body>
-        </html>
+        <html><body><p>{msg}</p></body></html>
         """
 
         for u in recipients:
-            # Email
             if u.email:
-                send_mail(
-                    subject_line,
-                    msg,  # Plain-text fallback
-                    from_email,
-                    [u.email],
-                    fail_silently=True,
-                    html_message=html_template,  # Styled HTML version
-                )
-            # DB Notification
-            Notification.objects.create(
-                user=u,
-                message=msg,
-                url=f"/tests/{test.pk}/",
-            )
+                send_mail(subject_line, msg, from_email, [u.email], fail_silently=True, html_message=html_template)
+            Notification.objects.create(user=u, message=msg, url=f"/tests/{test.pk}/")
+
 
 
 
@@ -670,4 +606,3 @@ def get_test_and_students(request):
         "test": test_data,
         "students": students_data,
     })
-

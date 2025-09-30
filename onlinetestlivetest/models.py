@@ -61,7 +61,7 @@ class AssignmentLike(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):  # pragma: no cover - debug convenience
-        return f"{self.user} ♥ {self.assignment}"
+        return f"{self.user} ? {self.assignment}"
 
 
 class AssignmentComment(models.Model):

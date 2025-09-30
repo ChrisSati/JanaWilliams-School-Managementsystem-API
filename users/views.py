@@ -347,40 +347,37 @@ class StudentAdmissionView(viewsets.ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         year_id = self.request.query_params.get("academic_year")
+        grade_class_id = self.request.query_params.get("grade_class")
+        status = self.request.query_params.get("status")  # optional, e.g., 'Enrolled'
 
         full_access_roles = [
-            'admin',
-            'teacher',
-            'registry',
-            'business manager',
-            'vpi',
-            'vpa',
-            'dean',
-            'it personnel',
+            'admin', 'teacher', 'registry', 'business manager',
+            'vpi', 'vpa', 'dean', 'it personnel',
         ]
 
         qs = StudentAdmission.objects.all()
 
-        # filter by academic year if passed
+        # filter by academic year if provided
         if year_id:
             qs = qs.filter(academic_year_id=year_id)
 
+        # filter by grade_class if provided
+        if grade_class_id:
+            qs = qs.filter(grade_class_id=grade_class_id)
+
+        # filter by status if provided
+        if status:
+            qs = qs.filter(status=status)
+
+        # permission logic
         if user.user_type in full_access_roles:
             return qs
         elif user.user_type == 'parent':
             return qs.filter(parent=user)
         elif user.user_type == 'student':
             return qs.filter(user=user)
+
         return StudentAdmission.objects.none()
-
-    def perform_create(self, serializer):
-        # require academic_year when creating new admissions
-        year_id = self.request.data.get("academic_year")
-        if not year_id:
-            raise ValueError("academic_year is required when creating a student admission")
-        academic_year = AcademicYear.objects.get(id=year_id)
-        serializer.save(academic_year=academic_year)
-
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])

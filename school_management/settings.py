@@ -122,9 +122,12 @@ CSRF_TRUSTED_ORIGINS = [
     "https://janalwilliamsedufoundation.online",
 ]
 
+
 CORS_ALLOW_HEADERS = list(default_headers) + [
-    'X-CSRFToken',
+    "authorization",
+    "X-CSRFToken",
 ]
+
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ORIGIN_ALLOW_ALL = False

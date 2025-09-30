@@ -12,7 +12,7 @@ router.register('periodic-tests', PeriodicTestViewSet, basename='periodic-tests'
 router.register('student-answers', StudentAnswerViewSet, basename='student-answers')
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),    
     path('teacher-dashboard/', TeacherDashboardView.as_view(), name='teacher-dashboard'),
     path('assignment-comments/<int:pk>/', AssignmentCommentDetail.as_view(), name='assignment-comment-detail'),
     path('api/test-with-students/', get_test_and_students, name='test-with-students'),

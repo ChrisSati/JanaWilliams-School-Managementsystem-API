@@ -35,12 +35,12 @@ class StudentAdmissionAdmin(admin.ModelAdmin):
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
-    list_display = ('name',  'division_assigned')
+    list_display = ('id', 'name',  'division_assigned')
     search_fields = ('name', 'division_assigned__name')
 
 @admin.register(Assignment)
 class AssignmentAdmin(admin.ModelAdmin):
-    list_display = ('title', 'assignment_subject', 'due_date', 'created_by')
+    list_display = ('id', 'title', 'assignment_subject', 'due_date', 'created_by')
     search_fields = ('title', 'assignment_subject__name', 'created_by__username')
 
 
