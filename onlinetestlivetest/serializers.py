@@ -183,14 +183,18 @@ class AssignmentSerializer(serializers.ModelSerializer):
 # ---------------------------
 # Question
 # ---------------------------
+from base64 import b64encode
+
 class QuestionSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
     question_image_url = serializers.SerializerMethodField()
+    question_image_base64 = serializers.SerializerMethodField()
 
     class Meta:
         model = Question
         fields = [
-            'id', 'question_text', 'question_image', 'question_image_url', 'attachment', 'structured_payload',
+            'id', 'question_text', 'question_image', 'question_image_url',
+            'question_image_base64', 'attachment', 'structured_payload',
             'marks', 'option_a', 'option_b', 'option_c', 'option_d', 'correct_answer'
         ]
         extra_kwargs = {
@@ -203,14 +207,24 @@ class QuestionSerializer(serializers.ModelSerializer):
         if obj.question_image:
             if request is not None:
                 return request.build_absolute_uri(obj.question_image.url)
-            else:
-                # fallback if no request in context
-                return obj.question_image.url
+            return obj.question_image.url
+        return None
+
+    def get_question_image_base64(self, obj):
+        if obj.question_image:
+            try:
+                with open(obj.question_image.path, "rb") as f:
+                    encoded = b64encode(f.read()).decode()
+                    # automatically determine MIME type (png/jpeg)
+                    ext = obj.question_image.name.split('.')[-1].lower()
+                    mime = "image/png" if ext == "png" else "image/jpeg"
+                    return f"data:{mime};base64,{encoded}"
+            except Exception as e:
+                print(f"Failed to encode image: {e}")
         return None
 
     def validate(self, attrs):
         return attrs
-
 
 
 # ---------------------------

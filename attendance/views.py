@@ -6,130 +6,94 @@ from teacherdata.models import TeacherDataProcess
 from .models import StudentAttendance
 from .serializers import StudentAttendanceSerializer
 
+
+
 class CanTakeAttendance(permissions.BasePermission):
+    """Only allow certain user types to take attendance."""
     def has_permission(self, request, view):
-        return request.user.user_type in ['admin', 'teacher', 'registry', 'vpi', 'vpa', 'dean']
-    
+        return request.user.user_type in ["admin", "teacher", "registry", "vpi", "vpa", "dean"]
+
 
 class StudentAttendanceViewSet(viewsets.ModelViewSet):
+    """
+    Handles single attendance record creation.
+    """
     serializer_class = StudentAttendanceSerializer
     permission_classes = [permissions.IsAuthenticated, CanTakeAttendance]
 
     def get_queryset(self):
-        """
-        Filter attendance records by:
-        - Full access for 'admin', 'dean', 'vpa', 'vpi'
-        - Assigned grade_class for teachers
-        - Optional grade_class query param
-        """
         queryset = self.get_filtered_queryset_by_role()
         grade_class_id = self.request.query_params.get("grade_class")
-
         if grade_class_id:
             queryset = queryset.filter(grade_class_id=grade_class_id)
-
         return queryset.select_related("student", "grade_class", "student__user").order_by("-date")
 
     def get_filtered_queryset_by_role(self):
         user = self.request.user
-        user_type = getattr(user, "user_type", None)
-
-        if user_type in ['admin', 'dean', 'vpa', 'vpi']: 
+        if user.user_type in ["admin", "dean", "vpa", "vpi"]:
             return StudentAttendance.objects.all()
-
-        elif user_type == 'teacher':
+        elif user.user_type == "teacher":
             try:
                 teacher = TeacherDataProcess.objects.get(username=user)
                 assigned_classes = teacher.grade_class.all()
                 return StudentAttendance.objects.filter(grade_class__in=assigned_classes)
             except TeacherDataProcess.DoesNotExist:
                 return StudentAttendance.objects.none()
-
         return StudentAttendance.objects.none()
 
     def get_serializer_context(self):
         return {"request": self.request}
 
     def perform_create(self, serializer):
+        """
+        Automatically set `taken_by` to the logged-in user.
+        """
         serializer.save(taken_by=self.request.user)
 
 
-# class StudentAttendanceViewSet(viewsets.ModelViewSet): 
-#     serializer_class = StudentAttendanceSerializer
-#     permission_classes = [permissions.IsAuthenticated, CanTakeAttendance]
-
-#     def get_queryset(self):
-#         queryset = (
-#             StudentAttendance.objects
-#             .select_related("student", "grade_class", "student__user")
-#             .order_by("-date")
-#         )
-#         grade_class_id = self.request.query_params.get("grade_class")
-#         if grade_class_id:
-#             queryset = queryset.filter(grade_class_id=grade_class_id)
-#         return queryset
-
-#     def get_filtered_queryset_by_role(self):
-#         """
-#         Returns attendance queryset filtered by user role:
-#         - admin, dean, vpa, vpi: full access
-#         - teacher: only assigned grade classes
-#         """
-#         user = self.request.user
-#         user_type = getattr(user, "user_type", None)
-
-#         if user_type in ['admin', 'dean', 'vpa', 'vpi']:
-#             return StudentAttendance.objects.all()
-
-#         elif user_type == 'teacher':
-#             try:
-#                 teacher = TeacherDataProcess.objects.get(username=user)
-#                 assigned_classes = teacher.grade_class.all()
-#                 return StudentAttendance.objects.filter(grade_class__in=assigned_classes)
-#             except TeacherDataProcess.DoesNotExist:
-#                 return StudentAttendance.objects.none()
-
-#         return StudentAttendance.objects.none()
-
-#     def get_serializer_context(self):
-#         return {"request": self.request}
-
-#     def perform_create(self, serializer):
-#         serializer.save(taken_by=self.request.user)
-
-#     # ✅ ADD THIS FUNCTION BELOW
-#     def get_all_attendance_for_privileged_users(self):
-#         """
-#         Custom function to be called internally or from a separate view
-#         to return full attendance for admin, dean, vpa, vpi only.
-#         """
-#         user = self.request.user
-#         user_type = getattr(user, "user_type", None)
-
-#         if user_type in ['admin', 'dean', 'vpa', 'vpi']:
-#             return StudentAttendance.objects.select_related("student", "grade_class", "student__user").order_by("-date")
-        
-#         return StudentAttendance.objects.none()
-
-
-
-
-
-
-
-
 class BulkCreateStudentAttendanceView(APIView):
+    """
+    Dedicated endpoint for bulk attendance creation.
+    Creates new records or updates existing ones for the same student and date.
+    """
     permission_classes = [permissions.IsAuthenticated, CanTakeAttendance]
 
     def post(self, request, *args, **kwargs):
-        print("Received data:", request.data)  # Debug print
-        serializer = StudentAttendanceSerializer(data=request.data, many=True, context={'request': request})
-        if serializer.is_valid():
-            serializer.save(taken_by=request.user)
-            return Response({"message": "Attendance records created successfully."}, status=status.HTTP_201_CREATED)
-        print("Validation errors:", serializer.errors)  # Debug print errors
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+        data = request.data
+        if not isinstance(data, list):
+            return Response(
+                {"error": "Expected a list of attendance records."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
 
+        response_data = []
+        for record in data:
+            student_id = record.get("student")
+            date = record.get("date")
+            grade_class_id = record.get("grade_class")
+            status_value = record.get("status")
 
+            # Update existing record or create new
+            obj, created = StudentAttendance.objects.update_or_create(
+                student_id=student_id,
+                date=date,
+                defaults={
+                    "grade_class_id": grade_class_id,
+                    "status": status_value,
+                    "taken_by": request.user,
+                },
+            )
 
+            response_data.append({
+                "student": student_id,
+                "date": date,
+                "created": created
+            })
+
+        return Response(
+            {
+                "message": "Attendance processed successfully",
+                "details": response_data
+            },
+            status=status.HTTP_200_OK,
+        )

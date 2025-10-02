@@ -15,8 +15,15 @@ class SchoolFeesData(models.Model):
         return f"{self.grade_class} - {self.yearly_school_fee}"
 
 
-class Payment(models.Model):
+class Payment(models.Model): 
+     
+    INSTALLMENT_CHOICES = [
+        ('1st Installment', '1st Installment'),
+        ('2nd Installment', '2nd Installment'),
+        ('3rd Installment', '3rd Installment'),
+    ]    
     
+    installment = models.CharField(max_length=50, choices=INSTALLMENT_CHOICES, default='1st Installment')
     semester = models.CharField(max_length=50, choices=[('First', 'First'), ('Second', 'Second')])
     student = models.ForeignKey(StudentAdmission, on_delete=models.CASCADE)
     student_class =  models.ForeignKey(GradeClass, on_delete=models.SET_NULL, null=True, related_name='student_class')
@@ -35,7 +42,7 @@ class Payment(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"Payment of {self.total_fee}, {self.semester}, {self.amount_paid} for {self.student}"
+        return f"Payment of {self.total_fee}, {self.semester}, {self.installment}, {self.amount_paid} for {self.student}"
     
 
 

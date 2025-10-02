@@ -13,18 +13,9 @@ class SchoolFeesDataAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'semester',  'student', 'student_class',  'total_fee', 'payer_name', 'amount_paid', 'date', 'balance_fee')
+    list_display = ('id', 'semester', 'installment',  'student', 'student_class',  'total_fee', 'payer_name', 'amount_paid', 'date', 'balance_fee')
     list_filter = ['student']
 
-# @admin.register(SchoolFeePayment)
-# class SchoolFeePaymentAdmin(admin.ModelAdmin):
-#     list_display = ('receipt_number', 'student', 'semester', 'services', 'student_class', 'amount_due', 'amount_paid', 'balance', 'date')
-#     list_filter = ('semester', 'services', 'date')
-#     search_fields = ('receipt_number', 'student__full_name', 'payer_name')
-#     readonly_fields = ('balance',)
-    
-#     def balance(self, obj):
-#         return obj.balance
 
 
 @admin.register(SchoolFeePayment)
