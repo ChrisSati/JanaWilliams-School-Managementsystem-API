@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from rest_framework import serializers
+from rest_framework import permissions
 from threading import Thread
 import json
 from datetime import timedelta
@@ -16,8 +17,8 @@ from academics.serializers import StudentAdmissionSerializer
 from users.models import User
 from teacherdata.models import TeacherDataProcess, TeacherLessonPlan
 from teacherdata.serializers import TeacherDataProcessSerializer
-from .models import Assignment, AssignmentLike, AssignmentComment, OnlineTest, PeriodicTest, Question, StudentAnswer, TestQuestion
-from .serializers import AssignmentCommentSerializer, AssignmentSerializer, CommentCreateSerializer, OnlineTestSerializer, PeriodicTestSerializer, QuestionSerializer, StudentAnswerSerializer, TestQuestionSerializer, ReplyCreateSerializer, AssignmentReplySerializer
+from .models import Assignment, AssignmentLike, AssignmentComment, OnlineTest, PeriodicTest, Question, StudentAnswer, TestQuestion, TestAttachment
+from .serializers import AssignmentCommentSerializer, AssignmentSerializer, TestAttachmentSerializer, CommentCreateSerializer, OnlineTestSerializer, PeriodicTestSerializer, QuestionSerializer, StudentAnswerSerializer, TestQuestionSerializer, ReplyCreateSerializer, AssignmentReplySerializer
 from django.db.models import Sum
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -25,6 +26,35 @@ from rest_framework import status
 from django.db.models import Count, Q, F
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import action
+
+
+
+class TestAttachmentListCreateView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request):
+        """List all uploaded attachments"""
+        attachments = TestAttachment.objects.all()
+        serializer = TestAttachmentSerializer(attachments, many=True, context={'request': request})
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        """Upload a new attachment"""
+        serializer = TestAttachmentSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request):
+        """Delete an attachment by ID"""
+        attachment_id = request.data.get("id")
+        if not attachment_id:
+            return Response({"error": "Attachment ID is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        attachment = get_object_or_404(TestAttachment, id=attachment_id)
+        attachment.delete()
+        return Response({"message": "Attachment deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
 
 
 

@@ -7,8 +7,20 @@ from teacherdata.models import TeacherDataProcess
 from django.utils.dateparse import parse_datetime
 from datetime import datetime
 from users.models import User
-from .models import Assignment, AssignmentComment, OnlineTest, PeriodicTest, Question, StudentAnswer, TestQuestion, TestSection
+from .models import Assignment, AssignmentComment, OnlineTest, PeriodicTest, Question, StudentAnswer, TestQuestion, TestSection, TestAttachment
 
+
+class TestAttachmentSerializer(serializers.ModelSerializer):
+    file_url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = TestAttachment
+        fields = ['id', 'title', 'description', 'file', 'file_url', 'uploaded_at']
+        read_only_fields = ['uploaded_at']
+
+    def get_file_url(self, obj):
+        request = self.context.get('request')
+        return request.build_absolute_uri(obj.file.url) if obj.file else None
 
 
 class AssignmentReplySerializer(serializers.ModelSerializer):

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import StudentAttendance
+from .models import StudentAttendance, Announcement, BackgroundImage
 
 
 class StudentAttendanceSerializer(serializers.ModelSerializer):
@@ -39,3 +39,26 @@ class StudentAttendanceSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("You are not allowed to take attendance.")
 
         return attrs
+
+
+
+
+
+
+class AnnouncementSerializer(serializers.ModelSerializer):
+    created_by_name = serializers.CharField(source='created_by.full_name', read_only=True)
+    role = serializers.CharField(source='created_by.role', read_only=True)
+
+    class Meta:
+        model = Announcement
+        fields = [
+            'id', 'title', 'subtitle', 'content',
+            'created_by', 'created_by_name', 'role',
+            'created_at', 'updated_at'
+        ]
+        read_only_fields = ['created_by', 'created_at', 'updated_at']
+
+class BackgroundImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BackgroundImage
+        fields = ['id', 'image', 'updated_at']

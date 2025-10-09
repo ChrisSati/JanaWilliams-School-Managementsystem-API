@@ -1,10 +1,11 @@
 from rest_framework import viewsets, permissions, status
+from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from teacherdata.models import TeacherDataProcess
-from .models import StudentAttendance
-from .serializers import StudentAttendanceSerializer
+from .models import StudentAttendance, Announcement, BackgroundImage
+from .serializers import StudentAttendanceSerializer, AnnouncementSerializer, BackgroundImageSerializer
 
 
 
@@ -97,3 +98,43 @@ class BulkCreateStudentAttendanceView(APIView):
             },
             status=status.HTTP_200_OK,
         )
+
+
+
+ALLOWED_ROLES = ['admin', 'business_manager']
+
+class AnnouncementListCreateView(generics.ListCreateAPIView):
+    queryset = Announcement.objects.all().order_by('-created_at')
+    serializer_class = AnnouncementSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        user = self.request.user
+        if user.role not in ALLOWED_ROLES:
+            raise PermissionDenied("Only admin or business manager can post announcements.")
+        serializer.save(created_by=user)
+
+class AnnouncementDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Announcement.objects.all()
+    serializer_class = AnnouncementSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_update(self, serializer):
+        user = self.request.user
+        announcement = self.get_object()
+        if announcement.created_by != user:
+            raise PermissionDenied("You can only edit your own announcement.")
+        serializer.save()
+
+    def perform_destroy(self, instance):
+        user = self.request.user
+        if instance.created_by != user:
+            raise PermissionDenied("You can only delete your own announcement.")
+        instance.delete()
+
+class BackgroundImageView(generics.RetrieveAPIView):
+    queryset = BackgroundImage.objects.all().order_by('-updated_at')
+    serializer_class = BackgroundImageSerializer
+
+    def get_object(self):
+        return self.queryset.first()

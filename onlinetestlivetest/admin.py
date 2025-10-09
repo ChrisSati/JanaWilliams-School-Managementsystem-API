@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Assignment, OnlineTest, PeriodicTest, Question, StudentAnswer, TestQuestion, TestSection
+from .models import Assignment, OnlineTest, PeriodicTest, Question, StudentAnswer, TestQuestion, TestSection, TestAttachment
+
+
+@admin.register(TestAttachment)
+class TestAttachmentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'description', 'file', 'uploaded_at')
+    search_fields = ('title', 'description')
+    list_filter = ('uploaded_at',)
+    ordering = ('-uploaded_at',)
 
 
 @admin.register(Assignment)
