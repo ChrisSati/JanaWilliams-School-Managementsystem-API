@@ -339,8 +339,10 @@ class MyChildrenView(APIView):
         return Response(serializer.data)
     
 
+# -----------------------------
+# ModelViewSet for StudentAdmission
+# -----------------------------
 class StudentAdmissionView(viewsets.ModelViewSet):
-    queryset = StudentAdmission.objects.none()
     serializer_class = StudentAdmissionSerializer
     permission_classes = [IsAuthenticated]
 
@@ -348,7 +350,7 @@ class StudentAdmissionView(viewsets.ModelViewSet):
         user = self.request.user
         year_id = self.request.query_params.get("academic_year")
         grade_class_id = self.request.query_params.get("grade_class")
-        status = self.request.query_params.get("status")  # optional, e.g., 'Enrolled'
+        status = self.request.query_params.get("status")  # optional filter
 
         full_access_roles = [
             'admin', 'teacher', 'registry', 'business manager',
@@ -357,19 +359,19 @@ class StudentAdmissionView(viewsets.ModelViewSet):
 
         qs = StudentAdmission.objects.all()
 
-        # filter by academic year if provided
+        # Filter by academic year if provided
         if year_id:
             qs = qs.filter(academic_year_id=year_id)
 
-        # filter by grade_class if provided
+        # Filter by grade class if provided
         if grade_class_id:
             qs = qs.filter(grade_class_id=grade_class_id)
 
-        # filter by status if provided
+        # Filter by status if provided
         if status:
             qs = qs.filter(status=status)
 
-        # permission logic
+        # Permission logic
         if user.user_type in full_access_roles:
             return qs
         elif user.user_type == 'parent':
@@ -379,37 +381,75 @@ class StudentAdmissionView(viewsets.ModelViewSet):
 
         return StudentAdmission.objects.none()
 
+
+# -----------------------------
+# Simple GET endpoint for AJAX student dropdowns
+# -----------------------------
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def get_students(request):
     grade_class_id = request.GET.get('grade_class')
-    print(f"Grade Class ID received: {grade_class_id}")  # Debugging
+    academic_year_id = request.GET.get('academic_year')
+    status = request.GET.get('status', 'Enrolled')  # default to Enrolled
+
+    students = StudentAdmission.objects.all()
 
     if grade_class_id:
-        students = StudentAdmission.objects.filter(
-            grade_class_id=grade_class_id, status='Enrolled'
-        ).values('id', 'full_name')
+        students = students.filter(grade_class_id=grade_class_id)
+    if academic_year_id:
+        students = students.filter(academic_year_id=academic_year_id)
+    if status:
+        students = students.filter(status=status)
 
-        print(f"Filtered Students: {list(students)}")  # Debugging
-        return JsonResponse(list(students), safe=False)
+    # Return only id and full_name for dropdowns
+    students = students.values('id', 'full_name')
 
-    return JsonResponse([], safe=False)
+    return JsonResponse(list(students), safe=False)
+
+
+
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def count_by_semester(request):
-    counts = StudentAdmission.count_admissions_per_semester()
-    return Response(counts)
+    try:
+        academic_year_id = request.GET.get('academic_year')
+        qs = StudentAdmission.objects.all()
+        if academic_year_id:
+            qs = qs.filter(academic_year_id=academic_year_id)
 
+        semester1_count = qs.filter(semester_status="First").count()
+        semester2_count = qs.filter(semester_status="Second").count()
+
+        data = {
+            "first_semester": semester1_count,
+            "second_semester": semester2_count,
+        }
+        return Response(data, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def count_by_gender(request):
-    counts = StudentAdmission.count_by_gender()
-    return Response(counts)
+    try:
+        academic_year_id = request.GET.get('academic_year')
+        qs = StudentAdmission.objects.all()
+        if academic_year_id:
+            qs = qs.filter(academic_year_id=academic_year_id)
 
+        male_count = qs.filter(gender="Male").count()
+        female_count = qs.filter(gender="Female").count()
+
+        data = {
+            "male": male_count,
+            "female": female_count,
+        }
+        return Response(data, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])

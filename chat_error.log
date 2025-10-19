@@ -7504,3 +7504,1111 @@ Traceback (most recent call last):
   File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '217.76.50.7'. You may need to add '217.76.50.7' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.goldenageacaschoolsystem.online'. You may need to add 'www.goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/http/request.py", line 167, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'goldenageacaschoolsystem.online'. You may need to add 'goldenageacaschoolsystem.online' to ALLOWED_HOSTS.
+Internal Server Error: /api/users/student-averages/publish-grades/
+Internal Server Error: /api/users/student-averages/publish-grades/
+Internal Server Error: /academic-report/13/1/
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/reportcard/views.py", line 886, in get
+    .annotate(average=Avg("average_score"))
+                      ^^^
+NameError: name 'Avg' is not defined
+Internal Server Error: /academic-report/13/1/
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/reportcard/views.py", line 886, in get
+    .annotate(average=Avg("average_score"))
+                      ^^^
+NameError: name 'Avg' is not defined
+Internal Server Error: /academic-report/13/1/
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/reportcard/views.py", line 886, in get
+    .annotate(average=Avg("average_score"))
+                      ^^^
+NameError: name 'Avg' is not defined
+Internal Server Error: /academic-report/13/1/
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/reportcard/views.py", line 883, in get
+    .annotate(avg_score=Avg('average_score'))  # or use your formatted_average_score logic
+                        ^^^
+NameError: name 'Avg' is not defined
+Internal Server Error: /academic-report/7/1/
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/reportcard/views.py", line 883, in get
+    .annotate(avg_score=Avg('average_score'))  # or use your formatted_average_score logic
+                        ^^^
+NameError: name 'Avg' is not defined
+Internal Server Error: /academic-report/13/1/
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/reportcard/views.py", line 883, in get
+    .annotate(avg_score=Avg('average_score'))  # or use your formatted_average_score logic
+                        ^^^
+NameError: name 'Avg' is not defined
+Internal Server Error: /academic-report/13/1/
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/reportcard/views.py", line 885, in get
+    .annotate(avg_score=Avg('average_score'))
+                        ^^^
+NameError: name 'Avg' is not defined
+Internal Server Error: /academic-report/13/1/
+Traceback (most recent call last):
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/venv/lib/python3.12/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/html/JanaWilliamsSchool/schoolApi/school_management/reportcard/views.py", line 885, in get
+    .annotate(avg_score=Avg('average_score'))
+                        ^^^
+NameError: name 'Avg' is not defined
